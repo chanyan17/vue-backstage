@@ -40,3 +40,8 @@ npm run dev
 ### ES6
 [array.some()](http://www.runoob.com/jsref/jsref-some.html)
 [array.filter()](http://www.runoob.com/jsref/jsref-filter.html)
+
+
+### G2
+[g2文档](https://antv.alipay.com/zh-cn/g2/3.x/tutorial/index.html)
+[viser-vue](https://viserjs.github.io)
