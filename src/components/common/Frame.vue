@@ -2,7 +2,7 @@
     <div class="wrapper">
         <v-header></v-header>
         <v-menu></v-menu>
-        <div class="content-wrapper" :class="{'content-collapse': collapse}">
+        <div class="content-wrapper" :class="{'content-collapse': collapse, 'content-none-tag': !tagsList.length}">
             <v-tags></v-tags>
             <div class="content">
                 <transition name="move" mode="out-in">
@@ -55,11 +55,21 @@
     right: 0;
     top: 60px;
     bottom: 0;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     transition: left .3s ease-in-out;
     background: #f0f0f0;
 }
 .content-wrapper.content-collapse {
     left: 65px;
+}
+.content-wrapper.content-none-tag {
+    padding-bottom: 0px;
+}
+.content {
+     width: auto;
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 </style>

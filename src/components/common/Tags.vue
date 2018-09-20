@@ -33,10 +33,14 @@
             },
             setTags(route) {
                 const isExist = this.tagsList.some(item => {
-                    return item.path == route.fullPath
+                    return item.path == route.fullPath;
                 })
                 if(!isExist) {
-                    if(this.tagsList.length >= 8) this.tagsList.unshift();
+                    console.log(this.tagsList.length);
+                    if(this.tagsList.length >= 6) {
+                        this.tagsList.unshift();
+                        console.log(this.tagsList.length);
+                    }
                     this.tagsList.push({
                         title: route.meta.title,
                         path: route.fullPath,
@@ -55,16 +59,19 @@
                 }else{
                     this.$router.push('/');
                 }
+                eventBus.$emit('tags', this.tagsList);
             },
             closeAll(){
                 this.tagsList = [];
                 this.$router.push('/');
+                eventBus.$emit('tags', this.tagsList);
             },
             closeOther(){
                 const curItem = this.tagsList.filter(item => {
                     return item.path === this.$route.fullPath;
                 })
                 this.tagsList = curItem;
+                eventBus.$emit('tags', this.tagsList);
             }
         },
         watch:{

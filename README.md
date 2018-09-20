@@ -23,6 +23,9 @@ npm install babel-polyfill -S
 # 安装axio,一个基于 promise 的 HTTP 库
 npm install axios -S
 
+# 安装less
+npm install less less-loader --save-dev
+
 # 本地开发
 npm run dev
 ```
