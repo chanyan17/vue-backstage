@@ -36,10 +36,8 @@
                     return item.path == route.fullPath;
                 })
                 if(!isExist) {
-                    console.log(this.tagsList.length);
                     if(this.tagsList.length >= 6) {
-                        this.tagsList.unshift();
-                        console.log(this.tagsList.length);
+                        this.tagsList.splice(0, 1);
                     }
                     this.tagsList.push({
                         title: route.meta.title,

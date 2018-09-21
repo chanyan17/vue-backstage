@@ -45,6 +45,9 @@
 
                 this.tagsList = arr;
             })
+        },
+        mounted() {
+            window.vue = this;
         }
     }
 </script>
