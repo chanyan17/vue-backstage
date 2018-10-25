@@ -48,3 +48,8 @@ npm run dev
 ### G2
 [g2文档](https://antv.alipay.com/zh-cn/g2/3.x/tutorial/index.html)
 [viser-vue](https://viserjs.github.io)
+[g2-demo](https://antv.alipay.com/zh-cn/g2/3.x/demo/index.html)
+
+
+### Easy Mock
+[模拟数据-Easy Mock](https://easy-mock.com/)

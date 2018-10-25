@@ -116,7 +116,7 @@
             </el-col>
             <el-col :span="12">
                 <el-card class="box-card access-trend">
-                    <div style="height: 300px;"></div>
+                    <div id="c2"></div>
                 </el-card>
             </el-col>
         </el-row>
@@ -201,7 +201,8 @@
             // Step 1: 创建 Chart 对象
             const chart = new G2.Chart({
                 container: 'c1', // 指定图表容器 ID
-                width : 400, // 指定图表宽度
+                forceFit: true,
+                //width : 500, // 指定图表宽度
                 height : 300 // 指定图表高度
             });
             // Step 2: 载入数据源
@@ -210,6 +211,60 @@
             chart.interval().position('genre*sold').color('genre')
             // Step 4: 渲染图表
             chart.render();
+
+
+            const _data = [{
+                    year: '1991',
+                    value: 3
+                }, {
+                    year: '1992',
+                    value: 4
+                }, {
+                    year: '1993',
+                    value: 3.5
+                }, {
+                    year: '1994',
+                    value: 5
+                }, {
+                    year: '1995',
+                    value: 4.9
+                }, {
+                    year: '1996',
+                    value: 6
+                }, {
+                    year: '1997',
+                    value: 7
+                }, {
+                    year: '1998',
+                    value: 9
+                }, {
+                    year: '1999',
+                    value: 13
+                }
+            ];
+            var _chart = new G2.Chart({
+                container: 'c2',
+                forceFit: true,
+                height: 300
+            });
+            _chart.source(_data);
+            _chart.scale('value', {
+                min: 0
+            });
+            _chart.scale('year', {
+                range: [0, 1]
+            });
+            _chart.tooltip({
+                crosshairs: {
+                    type: 'line'
+                }
+            });
+            _chart.line().position('year*value');
+            _chart.point().position('year*value').size(4).shape('circle').style({
+                stroke: '#fff',
+                lineWidth: 1
+            });
+            _chart.render();
         }
     }
 </script>

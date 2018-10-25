@@ -13,13 +13,13 @@
                 <el-input v-model="select_word" placeholder="筛选关键词" class="handle-input mr10"></el-input>
                 <el-button type="primary" icon="search" @click="search">搜索</el-button>
             </div>
-            <el-table :data="data" border class="table" ref="multipleTable" @selection-change="handleSelectionChange">
+            <el-table :data="record_list" border class="table" ref="multipleTable" @selection-change="handleSelectionChange">
                 <el-table-column type="selection" width="55" align="center"></el-table-column>
                 <el-table-column prop="date" label="日期" sortable width="150">
                 </el-table-column>
                 <el-table-column prop="name" label="姓名" width="120">
                 </el-table-column>
-                <el-table-column prop="address" label="地址" :formatter="formatter">
+                <el-table-column prop="address" label="地址"> <!--:formatter="formatter" -->
                 </el-table-column>
                 <el-table-column label="操作" width="180" align="center">
                     <template slot-scope="scope">
@@ -39,12 +39,26 @@
     export default {
         data() {
             return {
-                data: [],
+                url: './static/vuetable.json',
+                record_list: [],
                 select_cate: '',
                 select_word: ''
             }
         },
         methods: {
+            getData() {
+                // 开发环境使用 easy-mock 数据，正式环境使用 json 文件
+                // if(process.env.NODE_DEV === 'development') {
+                //     this.url = '/v1/login-record';
+                // }
+                this.url = '/v1/login-record';
+                this.$axios.get(this.url, {
+                    page: this.current_page
+                }).then((res)=> {
+                    console.log(res);
+                    this.record_list = res.data.rows;
+                });
+            },
             formatter() {},
             delAll() {},
             search() {},
@@ -52,6 +66,9 @@
             handleEdit() {},
             handleDelete() {},
             handleCurrentChange() {}
+        },
+        created() {
+            this.getData();
         }
     }
 </script>

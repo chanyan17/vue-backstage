@@ -10,7 +10,12 @@ module.exports = {
         // Paths
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
-        proxyTable: {},
+        proxyTable: {
+            '/v1':{
+                target: 'https://easy-mock.com/mock/5bd172dfc302c11a6b5d3c77',
+                changeOrigin: true
+            }
+        },
 
         // Various Dev Server settings
         host: 'localhost', // can be overwritten by process.env.HOST
@@ -38,12 +43,13 @@ module.exports = {
 
     build: {
         // Template for index.html
+        env: require('./prod.env'),
         index: path.resolve(__dirname, '../dist/index.html'),
 
         // Paths
         assetsRoot: path.resolve(__dirname, '../dist'),
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/',
+        assetsPublicPath: './',
 
         /**
          * Source Maps

@@ -10,6 +10,13 @@ Vue.config.devtools = true
 Vue.config.productionTip = false //开启debug模式
 
 Vue.use(ElementUI, { size: 'small' })
+axios.interceptors.response.use(
+    response => {
+        return response.data;
+    }, error => {
+        return Promise.reject(error)
+    }
+)
 Vue.prototype.$axios = axios
 
 export const eventBus = new Vue()
