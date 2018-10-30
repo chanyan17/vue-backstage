@@ -21,3 +21,13 @@ body {
 a {
     text-decoration: none
 }
+
+.title {
+    margin: 0 0 10px 0;
+}
+.container {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

@@ -47,10 +47,6 @@
         },
         methods: {
             getData() {
-                // 开发环境使用 easy-mock 数据，正式环境使用 json 文件
-                // if(process.env.NODE_DEV === 'development') {
-                //     this.url = '/v1/login-record';
-                // }
                 this.url = '/v1/login-record';
                 this.$axios.get(this.url, {
                     page: this.current_page
@@ -73,15 +69,6 @@
     }
 </script>
 <style lang="less" scoped>
-.title {
-    margin: 0 0 10px 0;
-}
-.container {
-    padding: 30px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
 .handle-box {
     margin-bottom: 20px;
 }

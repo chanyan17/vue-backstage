@@ -74,6 +74,12 @@ export default new Router({
                     name: '404',
                     component: resolve => require(['../components/pages/404.vue'], resolve),
                     meta: {title: '404页面'}
+                },
+                {
+                    path: '/403',
+                    name: '403',
+                    component: resolve => require(['../components/pages/403.vue'], resolve),
+                    meta: {title: '403页面'}
                 }
             ]
         },

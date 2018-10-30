@@ -31,6 +31,7 @@ npm run dev
 ```
 ## 待处理的功能点
 [ ] utls/validate.js定义全局验证规则
+[ ] 根据环境来区分获取数据的方式
 
 ## 相关资料文档
 ### element-ui
@@ -53,3 +54,13 @@ npm run dev
 
 ### Easy Mock
 [模拟数据-Easy Mock](https://easy-mock.com/)
+
+### vue-cropper
+[剪裁工具](https://github.com/Agontuk/vue-cropperjs)
+
+
+### vue-quill-editor
+[富文本编辑器](https://github.com/surmon-china/vue-quill-editor)
+
+### mavonEditor
+[markdown编辑器](https://github.com/hinesboy/mavonEditor)
