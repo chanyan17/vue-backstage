@@ -30,7 +30,9 @@ npm install less less-loader --save-dev
 npm run dev
 ```
 ## 待处理的功能点
+
 [ ] utls/validate.js定义全局验证规则
+
 [ ] 根据环境来区分获取数据的方式
 
 ## 相关资料文档
