@@ -26,7 +26,6 @@
     </div>
 </template>
 <script>
-    //import { validateLoginPassword } from '../../utils/validate'
     export default {
         data() {
             return {

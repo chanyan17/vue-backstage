@@ -35,7 +35,10 @@ npm run dev
 
 [ ] 根据环境来区分获取数据的方式
 
-## 相关资料文档
+## 技术栈
+### vue-router
+[vue-router](https://router.vuejs.org/zh/)
+
 ### element-ui
 [input-slots](http://element-cn.eleme.io/#/zh-CN/component/input#input-slots)
 
@@ -66,3 +69,8 @@ npm run dev
 
 ### mavonEditor
 [markdown编辑器](https://github.com/hinesboy/mavonEditor)
+
+
+## 知识点
+- login
+    * 局部校验

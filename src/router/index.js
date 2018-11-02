@@ -3,8 +3,7 @@ import Router from 'vue-router'
 import { resolve } from 'url';
 
 Vue.use(Router)
-
-export default new Router({
+const router = new Router({
     routes: [
         {
             path: '/',
@@ -67,7 +66,7 @@ export default new Router({
                     path: '/permission',
                     name: 'permission',
                     component: resolve => require(['../components/pages/Permission.vue'], resolve),
-                    meta: {title: '权限测试'}
+                    meta: {title: '权限测试', requiresAuth: true}
                 },
                 {
                     path: '/404',
@@ -93,3 +92,17 @@ export default new Router({
         }
     ]
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        if(localStorage.getItem('bms_username') !== 'admin') {
+            next('/403');
+        }else{
+            next();
+        }
+    }else{
+        next();
+    }
+})
+
+export default router
